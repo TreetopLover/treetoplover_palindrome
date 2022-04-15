@@ -2,7 +2,7 @@
 
 require_relative "treetoplover_palindrome/version"
 
-class String
+module TreetoploverPalindrome
 
   # returns true for palindrome, false otherwise
   def palindrome?
@@ -12,7 +12,14 @@ class String
   private
   # returns content for palindrome testing
   def processed_content
-    scan(/[a-z]/i).join.downcase
+    to_s.scan(/[0-9a-z]/i).join.downcase
   end
 end
 
+class String 
+  include TreetoploverPalindrome
+end
+
+class Integer 
+  include TreetoploverPalindrome
+end
