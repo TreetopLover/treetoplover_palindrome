@@ -2,7 +2,17 @@
 
 require_relative "treetoplover_palindrome/version"
 
-module TreetoploverPalindrome
-  class Error < StandardError; end
-  # Your code goes here...
+class String
+
+  # returns true for palindrome, false otherwise
+  def palindrome?
+    processed_content == processed_content.reverse
+  end
+
+  private
+  # returns content for palindrome testing
+  def processed_content
+    scan(/[a-z]/i).join.downcase
+  end
 end
+
